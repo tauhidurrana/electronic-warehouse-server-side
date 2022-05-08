@@ -11,7 +11,7 @@ app.use(express.json())
 
 
 
-
+// user and password
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@warehouse1.twttu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
