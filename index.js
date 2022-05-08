@@ -56,6 +56,17 @@ async function run(){
             const result = await itemCollection.updateOne(filter, updateDocument, options);
             res.send(result);
         });
+
+        // get my items
+        app.get('/myitems', async (req, res) => {
+            const email = req.query.email;
+            console.log(email);  
+            const query = {email: email};       
+            const items = itemCollection.find(query);
+            const result = await items.toArray();
+            res.send(result);
+
+        });
     }
     finally{
     
